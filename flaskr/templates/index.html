@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='main_page.css') }}">
+    </head>
+    <body>
+        <img src="{{ url_for('static', filename='images/main_title.png') }}" style="width: 30%; display: block; margin-left: auto; margin-right: auto;">
+            <nav>
+                <div style="width: 100%;">
+                    <a href="{{ url_for('display_resources_list') }}">Ресурсы</a>
+                    <a>Рецепты</a>
+                    <a>Расы</a>
+                </div>
+            </nav>
+        <div class="container">
+            <div class="image">
+                <img src="{{ url_for('static', filename='images/main_image.jpg') }}" width="70%">
+            </div>
+            <div class="text">
+                <p>fgffggf</p>
+            </div>
+        </div>
+        
+    </body>
+</html>
