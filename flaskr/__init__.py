@@ -3,6 +3,7 @@ from flask import render_template
 
 def create_app():
     app = Flask(__name__, instance_relative_config=True)
+    app.config['TEMPLATES_AUTO_RELOAD'] = True
 
     @app.route("/")
     def display_main_page():
