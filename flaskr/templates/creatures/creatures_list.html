@@ -1,0 +1,64 @@
+{% extends 'base/base_page.html' %}
+
+{% block title  %}Виды существ{% endblock %}
+{% block style_import  %}
+
+{% endblock %}
+
+{% block body_title  %}Виды существ{% endblock %}
+{% block main_content %}
+<p>Ресурсы нужны для строительства новых сооружений, удовлетворения нужд ваших жителей, утоления их голода, торговли и много другого.
+    Фактически, вся игра сводитеся к добыче и преобразовании ресурсов, во что-то полезное или для достижения конкретной цели.
+ </p>
+ <h3>Сторительные материалы</h3>
+ <ul>
+     <li>
+         <img src="{{ url_for('static', filename='images/resources/icons/icon_resource_bricks.png') }}">
+         <a href="{{ url_for('display_brick') }}">Кирпичи</a>
+     </li>
+     <li>
+         <img src="{{ url_for('static', filename='images/resources/icons/icon_resource_fabric.png') }}">
+         <a href="{{ url_for('display_fabric') }}">Ткань</a>
+     </li>
+     <li>
+         <img src="{{ url_for('static', filename='images/resources/icons/icon_resource_planks.png') }}">
+         Доски
+     </li>
+     <li>
+         <img src="{{ url_for('static', filename='images/resources/icons/icon_resource_parts.png') }}">
+         Запчасти
+     </li>
+     <li>
+         <img src="{{ url_for('static', filename='images/resources/icons/icon_resource_wildfire.png') }}">
+         Эсссенция дикого огня
+     </li>
+ </ul>
+
+ <h3>Требующиеся для нужд</h3>
+ <ul>
+     <li>
+         <img src="{{ url_for('static', filename='images/resources/icons/icon_resource_ale.png') }}">
+         Эль
+     </li>
+     <li>
+         <img src="{{ url_for('static', filename='images/resources/icons/icon_resource_wine.png') }}">
+         Вино
+     </li>
+     <li>
+         <img src="{{ url_for('static', filename='images/resources/icons/icon_resource_training_gear.png') }}">
+         Тренировочное снаряжение
+     </li>
+     <li>
+         <img src="{{ url_for('static', filename='images/resources/icons/icon_resource_cosmetics.png') }}">
+         Косметика
+     </li>
+     <li>
+         <img src="{{ url_for('static', filename='images/resources/icons/icon_resource_incense.png') }}">
+         Благовония
+     </li>
+     <li>
+         <img src="{{ url_for('static', filename='images/resources/icons/icon_resource_scrolls.png') }}">
+         Свитки
+     </li>
+ </ul>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base/base_resource_page.html' %}
+
+{% block title  %}Ткань{% endblock %}
+{% block body_title  %}Ткань{% endblock %}
+{% block res_image  %}
+<img src="{{ url_for('static', filename='images/resources/icons/icon_resource_fabric.png') }}">
+{% endblock %}
+{% block main_content %}
+<p>
+    Производится из волокна, шелка или тросника.
+    Шелк можно вырастить на ферме, тросник добыть в месах произростания, а волокно получается как побочный продукт вырубки деревьев.
+    Ткань можно произвести во многих зданиях, с разной эффективностью.
+    Она требуется для строительства, а также производста плащей. 
+</p>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base/base_resource_page.html' %}
+
+{% block title  %}Кирпичи{% endblock %}
+{% block body_title  %}Кирпичи{% endblock %}
+{% block res_image  %}
+<img src="{{ url_for('static', filename='images/resources/icons/icon_resource_bricks.png') }}">
+{% endblock %}
+{% block main_content %}
+<p>
+    Производится из камня и глины.
+    Камень и глину можно добыть в залежах камней и глины, а также получить как побочный продукт производства в шахтах.
+    Кирпичи можно произвести во многих зданиях, с разной эффективностью. 
+</p>
+{% endblock %}

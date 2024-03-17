@@ -1,0 +1,19 @@
+DROP TABLE IF EXISTS resources;
+DROP TABLE IF EXISTS creatures;
+
+CREATE TABLE resources (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT UNIQUE NOT NULL,
+  image TEXT NOT NULL,
+  description TEXT NOT NULL
+);
+
+CREATE TABLE creatures (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT UNIQUE NOT NULL,
+  image TEXT NOT NULL,
+  description TEXT NOT NULL,
+  resolver TEXT NOT NULL,
+  interval TEXT NOT NULL,
+  tolerance TEXT NOT NULL
+);

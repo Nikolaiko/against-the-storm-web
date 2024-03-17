@@ -4,13 +4,11 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='styles/main_page.css') }}">
     </head>
     <body>
-        <img src="{{ url_for('static', filename='images/main_title.png') }}" class="centered">
+        <img src="{{ url_for('static', filename='images/main_title.png') }}" class="centered20">
             <nav>
-                <div class="centered">
-                    <a href="{{ url_for('display_resources_list') }}">Ресурсы</a>
-                    <a>Рецепты</a>
-                    <a>Расы</a>
-                </div>
+                <a href="{{ url_for('display_resources_list') }}">Ресурсы</a>
+                <a href="{{ url_for('display_creatures_list') }}">Расы</a>
+                <a>Рецепты</a>
             </nav>
             <h3>Описание</h3>
             <p>
