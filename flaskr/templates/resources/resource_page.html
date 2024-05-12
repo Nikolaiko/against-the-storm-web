@@ -1,0 +1,12 @@
+{% extends 'base/base_resource_page.html' %}
+
+{% block title  %}{{ name }}{% endblock %}
+{% block body_title  %}{{ title_name }}{% endblock %}
+{% block res_image  %}
+<img src="{{ url_for('static', filename=image_url) }}">
+{% endblock %}
+{% block main_content %}
+<p>
+    {{ desc }}
+</p>
+{% endblock %}
