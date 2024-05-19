@@ -16,9 +16,6 @@ def create_app():
     app.config['TEMPLATES_AUTO_RELOAD'] = True
     app.config['DATABASE'] = 'sqlite3.db'
 
-    result = json.loads(requests.get("http://127.0.0.1:8080/resources").text)
-    print(result[0])
-
     from . import db
     db.init_app(app)
 
@@ -32,28 +29,25 @@ def create_app():
 
     @app.route("/resources")
     def display_resources_list():
-        return render_template("resources/resources_list.html")
-    
-    @app.route("/resources/brick")
-    def display_brick():
-        return render_template("resources/brick_page.html")
-    
-    #@app.route("/resources/fabric")
-    #def display_fabric():
-    #    return render_template("resources/fabric_page.html")
+        result = json.loads(requests.get("http://127.0.0.1:8080/resources").text)
+        return render_template(
+            "resources/resources_list.html",
+            gameResources = result
+        )
     
     @app.route("/resources/<string:res_name>")
     def display_resource(res_name):
-   #     res = json.loads(requests.get('http://127.0.0.1:8080/readers').text)
-   #     print(res[0]["phone"])
-        resource = getResFromName(res_name)
+        resource = json.loads(requests.get("http://127.0.0.1:8080/resources/" + res_name).text)
+        print(resource)
         if resource == None:
             abort(404)
         return render_template(
             "resources/resource_page.html",
-            name = resource.name,
-            title_name = resource.titleName,
-            image_url = resource.imageUrl,
-            desc = resource.description
+            name = resource["name"],
+            title_name = resource["name"],
+            image_url = resource["imageUrl"],
+            desc = resource["description"]
         )
+    
+    
     return app

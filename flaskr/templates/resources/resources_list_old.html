@@ -1,0 +1,66 @@
+{% extends 'base/base_page.html' %}
+
+{% block title  %}Ресурсы{% endblock %}
+{% block style_import  %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/resources_list.css') }}">
+{% endblock %}
+
+{% block body_title  %}Ресурсы{% endblock %}
+{% block main_content %}
+<p>Ресурсы нужны для строительства новых сооружений, удовлетворения нужд ваших жителей, утоления их голода, торговли и много другого.
+    Фактически, вся игра сводитеся к добыче и преобразовании ресурсов, во что-то полезное или для достижения конкретной цели.
+ </p>
+ <h3>Ресурсы доступные в игре</h3>
+
+<ul>
+    <li>
+        <img src="{{ url_for('static', filename='images/resources/icons/icon_resource_bricks.png') }}">
+        <a href="{{ url_for('display_resource', res_name='brick') }}">Кирпичи</a>
+    </li>
+    <li>
+        <img src="{{ url_for('static', filename='images/resources/icons/icon_resource_fabric.png') }}">
+        <a href="{{ url_for('display_resource', res_name='fabric') }}">Ткань</a>
+    </li>
+    <li>
+        <img src="{{ url_for('static', filename='images/resources/icons/icon_resource_planks.png') }}">
+        <a href="{{ url_for('display_resource', res_name='planks') }}">Доски</a>
+    </li>
+    <li>
+        <img src="{{ url_for('static', filename='images/resources/icons/icon_resource_parts.png') }}">
+        <a href="{{ url_for('display_resource', res_name='parts') }}">Запчасти</a>
+    </li>
+    <li>
+        <img src="{{ url_for('static', filename='images/resources/icons/icon_resource_wildfire.png') }}">
+        <a href="{{ url_for('display_resource', res_name='wildfire') }}">Эсссенция дикого огня</a>
+    </li>
+</ul>
+
+<h3>Требующиеся для нужд</h3>
+<ul>
+    <li>
+        <img src="{{ url_for('static', filename='images/resources/icons/icon_resource_ale.png') }}">
+        <a href="{{ url_for('display_resource', res_name='ale') }}">Эль</a>
+    </li>
+    <li>
+        <img src="{{ url_for('static', filename='images/resources/icons/icon_resource_wine.png') }}">
+        <a href="{{ url_for('display_resource', res_name='wine') }}">Вино</a>
+    </li>
+    <li>
+        <img src="{{ url_for('static', filename='images/resources/icons/icon_resource_training_gear.png') }}">
+        <a href="{{ url_for('display_resource', res_name='training') }}">Тренировочное снаряжение</a>
+    </li>
+    <li>
+        <img src="{{ url_for('static', filename='images/resources/icons/icon_resource_cosmetics.png') }}">
+        <a href="{{ url_for('display_resource', res_name='cosmetics') }}">Косметика</a>
+    </li>
+    <li>
+        <img src="{{ url_for('static', filename='images/resources/icons/icon_resource_incense.png') }}">
+        <a href="{{ url_for('display_resource', res_name='incense') }}">Благовония</a>
+    </li>
+    <li>
+        <img src="{{ url_for('static', filename='images/resources/icons/icon_resource_scrolls.png') }}">
+        <a href="{{ url_for('display_resource', res_name='scrolls') }}">Свитки</a>
+    </li>
+</ul>
+
+{% endblock %}
