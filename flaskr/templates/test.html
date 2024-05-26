@@ -1,0 +1,8 @@
+<html>
+    <body>
+        {% for t in testResults  %}
+        <h1>{{ t["name"] }}</h1>
+        <img src="{{ url_for('static', filename=t['imageUrl']) }}" />
+        {% endfor %}
+    </body>
+</html>

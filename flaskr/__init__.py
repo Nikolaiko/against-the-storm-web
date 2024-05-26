@@ -19,6 +19,11 @@ def create_app():
     from . import db
     db.init_app(app)
 
+    @app.route("/test")
+    def test():
+        result = json.loads(requests.get("http://127.0.0.1:8080/resources").text)
+        return render_template("test.html", testResults = result)
+
     @app.route("/")
     def display_main_page():
         return render_template("index.html")
@@ -38,9 +43,6 @@ def create_app():
     @app.route("/resources/<string:res_name>")
     def display_resource(res_name):
         resource = json.loads(requests.get("http://127.0.0.1:8080/resources/" + res_name).text)
-        print(resource)
-        if resource == None:
-            abort(404)
         return render_template(
             "resources/resource_page.html",
             name = resource["name"],
@@ -48,6 +50,5 @@ def create_app():
             image_url = resource["imageUrl"],
             desc = resource["description"]
         )
-    
     
     return app
